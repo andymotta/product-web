@@ -1,0 +1,30 @@
+
+Showing logs for build [32mandymotta-product-web-master-h62n4-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-s2lck[0m
+{"level":"warn","ts":1583453389.3645365,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583453389.365415,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mandymotta-product-web-master-h62n4-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-jvllr[0m
+{"level":"warn","ts":1583453390.275479,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1583453390.2772489,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mandymotta-product-web-master-h62n4-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mandymotta-product-web-master-h62n4-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-andymotta-product-web-master-h62n4-f5jr9[0m
+{"level":"warn","ts":1583453423.4586139,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583453423.835531,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/product-web.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mandymotta-product-web-master-h62n4-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:310e0478b7f79058c7d8baa52603a1718fb61604
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mandymotta-product-web-master-h62n4-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mandymotta-product-web-master-h62n4-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/product-web main.go
+main.go:10:2: cannot find package "github.com/gin-gonic/gin" in any of:
+	/usr/local/go/src/github.com/gin-gonic/gin (from $GOROOT)
+	/home/jenkins/go/src/github.com/gin-gonic/gin (from $GOPATH)
+make: *** [build] Error 1
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-make-build'. The execution of the pipeline has stopped.[0m
